@@ -87,20 +87,26 @@ ConsoleTest (const char *in, const char *out)
     console = new Console (in, out, ReadAvailHandler, WriteDoneHandler, 0);
 
     for (;;)
-      {
+    {
 	  readAvail->P ();	// wait for character to arrive
-	  ch = console->GetChar ();
-	  console->PutChar ('<');// added
-	  writeDone->P ();
-	  console->PutChar (ch);
-	  writeDone->P ();
-	  console->PutChar ('>');// added// echo it!
-	  writeDone->P ();	// wait for write to finish
-	  if (ch == 'q') {
-	    printf ("Au revoir\nNothing more, bye!\n");// au revoir added
-	      break;		// if q, quit
-	  }
+    ch = console->GetChar ();
+    if(ch !='q' && ch != EOF){
+      if(ch != '\n'){
+    	  console->PutChar ('<');// added
+    	  writeDone->P ();
+    	  console->PutChar (ch);
+    	  writeDone->P ();
+    	  console->PutChar ('>');// added// echo it!
+    	  writeDone->P ();	// wait for write to finish
+      }else{
+        console->PutChar (ch);
+        writeDone->P ();
       }
+    }else{
+	    printf ("Au revoir\nNothing more, bye!\n");// au revoir added
+	    break;		// if q, quit
+	  }
+    }
     delete console;
     delete readAvail;
     delete writeDone;

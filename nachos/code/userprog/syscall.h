@@ -31,7 +31,7 @@
 #define SC_Close	8
 #define SC_Fork		9
 #define SC_Yield	10
-#define SC_PutChar      11  // added
+#define SC_PutChar	11  // added
 
 #ifdef IN_USER_MODE
 

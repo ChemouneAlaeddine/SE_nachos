@@ -146,8 +146,8 @@ Yield:
 	j	$31
 	.end Yield
 
-	.globl 
-	.ent	Exitxsy
+	.globl  PutChar
+	.ent	PutChar
 PutChar:
 	addiu $2,$0,SC_PutChar
 	syscall
