@@ -41,7 +41,7 @@ NETWORK_O	:=	nettest.o post.o network.o
 #
 ###########################################################################
 
-S_OFILES	:=	switch.o
+S_OFILES	:=	switch.o -fPIC
 
 CFLAGS = -g -Wall -Wextra -Wshadow $(INCPATH) $(DEFINES) $(HOST) -DCHANGED 
 
