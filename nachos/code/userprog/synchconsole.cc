@@ -64,5 +64,18 @@ void SynchConsole::SynchGetString(char
 #endif // CHANGED
 
 int copyStringFromMachine(int from, char *to, unsigned size){
-  
+
+char stok[size];
+int i=0;
+
+  for (i; i < size; i++)
+  {
+      if( !machine->ReadMem(form,1,(int *)stock[i]) ) break;
+      if( stock[i] == '\0') break;
+      to[i] = stock[i];
+      from++;
+  }
+
+  to[i] = '\0';
+
 }
