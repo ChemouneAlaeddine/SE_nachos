@@ -220,3 +220,39 @@ Console::PutChar(int ch)
     interrupt->Schedule(ConsoleWriteDone, this, ConsoleTime,
 					ConsoleWriteInt);
 }
+
+
+
+void Console::GetString(char *s,int n)
+{
+  int i=0;
+  for(i=0;i<n;i++)
+    s[i]=(char)GetChar();
+}
+
+
+void Console::PutString(int ch)
+{
+    unsigned char c;
+    ASSERT(putBusy == FALSE);
+    if (ch < 0x80 || strcmp(nl_langinfo(CODESET),"UTF-8")) {
+	/* Not UTF-8 or ASCII, assume 8bit locale */
+	c = ch;
+        WriteFile(writeFileNo, &c, sizeof(c));
+    } else if (ch < 0x100) {
+	/* Non-ASCII UTF-8, thus two bytes */
+	c = ((ch & 0xc0) >> 6) | 0xc0;
+        WriteFile(writeFileNo, &c, sizeof(c));
+	c = (ch & 0x3f) | 0x80;
+        WriteFile(writeFileNo, &c, sizeof(c));
+    } /* Else not latin1, drop */
+    putBusy = TRUE;
+    interrupt->Schedule(ConsoleWriteDone, this, ConsoleTime,
+					ConsoleWriteInt);
+}
+
+void Console::PutInt(int n)
+{}
+
+void Console::GetInt(int *n)
+{}

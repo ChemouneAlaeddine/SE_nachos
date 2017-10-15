@@ -32,6 +32,11 @@
 #define SC_Fork		9
 #define SC_Yield	10
 #define SC_PutChar	11  // added
+#define SC_PutString	12  // added
+#define SC_GetChar	13  // added
+#define SC_GetString	14  // added
+#define SC_PutInt	15  // added
+#define SC_GetInt	16  // added
 
 #ifdef IN_USER_MODE
 
@@ -131,7 +136,12 @@ void Fork (void (*func) ());
  */
 void Yield ();
 
-void PutChar(char c); // added
+void PutChar(int c); // added
+void PutString(char *s); // added
+int GetChar(); // added
+void GetString(char *s,int n); // added
+void PutInt(int n); // added
+void GetInt(int *n); // added
 
 #endif // IN_USER_MODE
 

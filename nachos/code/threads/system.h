@@ -7,6 +7,7 @@
 
 #ifndef SYSTEM_H
 #define SYSTEM_H
+#define MAX_STRING_SIZE
 
 #include "copyright.h"
 #include "utility.h"
@@ -29,7 +30,7 @@ extern Interrupt *interrupt;	// interrupt status
 extern Statistics *stats;	// performance metrics
 extern Timer *timer;		// the hardware alarm clock
 
-#ifdef SYNCH_CONSOLE
+#ifdef USER_PROGRAM
 #include "synchconsole.h"
 extern Synchconsole *synchconsole;
 #endif // Changed

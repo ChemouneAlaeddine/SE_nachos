@@ -18,12 +18,11 @@
 
 #include "utility.h"
 #include "system.h"
-#include "../userprog/synchconsole.h"
-#include "../userprog/progtest.h"
+
 
 #ifdef USER_PROGRAM
 #include "progtest.h"
-#endif
+#endif 
 
 
 // External functions used by this file
@@ -136,7 +135,7 @@ main (int argc, char **argv)
 	  else if (!strcmp (*argv, "-sc"))
 	    {			// test the console
 		if (argc == 1)
-		    ConsoleTest (NULL, NULL);
+		    SynchConsoleTest (NULL, NULL);
 		else
 		  {
 		      ASSERT (argc > 1);

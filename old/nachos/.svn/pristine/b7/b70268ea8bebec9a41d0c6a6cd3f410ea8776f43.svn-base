@@ -1,0 +1,39 @@
+
+--Cette ligne, et les suivantes ci-dessous, seront ignorées--
+
+M    code/Makefile.common
+M    code/test/halt.c
+A    code/test/putchar.c
+M    code/threads/main.cc
+AM   code/userprog/addrspace.o
+AM   code/userprog/bitmap.o
+AM   code/userprog/console.o
+AM   code/userprog/exception.o
+A    code/userprog/in
+AM   code/userprog/interrupt.o
+AM   code/userprog/list.o
+AM   code/userprog/machine.o
+AM   code/userprog/main.o
+AM   code/userprog/mipssim.o
+AM   code/userprog/nachos
+A    code/userprog/outt
+M    code/userprog/progtest.cc
+A    code/userprog/progtest.cc~
+AM   code/userprog/progtest.o
+AM   code/userprog/scheduler.o
+AM   code/userprog/stats.o
+AM   code/userprog/switch.o
+AM   code/userprog/synch.o
+A    code/userprog/synchconsole.cc
+A    code/userprog/synchconsole.cc~
+A    code/userprog/synchconsole.h
+AM   code/userprog/synchlist.o
+M    code/userprog/syscall.h
+AM   code/userprog/sysdep.o
+AM   code/userprog/system.o
+AM   code/userprog/thread.o
+AM   code/userprog/threadtest.o
+AM   code/userprog/timer.o
+AM   code/userprog/translate.o
+AM   code/userprog/utility.o
+A    svn-commit.tmp

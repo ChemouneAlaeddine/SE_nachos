@@ -1,0 +1,30 @@
+
+--Cette ligne, et les suivantes ci-dessous, seront ignorées--
+
+M    addrspace.o
+M    console.o
+M    exception.cc
+A    exception.cc~
+M    exception.o
+M    interrupt.o
+M    machine.o
+M    main.o
+M    mipssim.o
+M    nachos
+M    progtest.cc
+M    progtest.cc~
+M    progtest.h
+A    progtest.h~
+M    progtest.o
+M    scheduler.o
+M    synchconsole.cc
+M    synchconsole.cc~
+AM   synchconsole.o
+M    synch.o
+M    syscall.h
+M    sysdep.o
+M    system.o
+M    thread.o
+M    threadtest.o
+M    timer.o
+M    translate.o

@@ -187,6 +187,11 @@ Initialize (int argc, char **argv)
     machine = new Machine (debugUserProg);	// this must come first
 #endif
 
+#ifdef USER_PROGRAM
+    synchconsole = new SynchConsole (NULL,NULL);  // this must come first
+#endif
+    
+
 #ifdef FILESYS
     synchDisk = new SynchDisk ("DISK");
 #endif
@@ -218,12 +223,10 @@ Cleanup ()
     postOffice = NULL;
 #endif
 
-#ifdef SYNCH_CONSOLE
-    synchconsole->~SynchConsole();
-    console = NULL;
-    writeDone = NULL;
-    readAvail = NULL;
-#endif // Changed
+#ifdef USER_PROGRAM
+    delete synchconsole;
+    synchconsole = NULL;
+#endif   
 
 #ifdef USER_PROGRAM
     delete machine;

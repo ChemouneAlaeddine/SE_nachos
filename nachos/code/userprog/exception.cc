@@ -82,9 +82,40 @@ ExceptionHandler (ExceptionType which)
 		    break;
 		  }
 		#ifdef CHANGED
-	        case SC_PutChar:
+	        /*case SC_PutChar:
 		  {
 		    DEBUG ('s', "PutChar\n");
+		    int ch = machine->ReadRegister (4);
+		    synchconsole->SynchPutChar(ch);
+		    break;
+		  }*/
+		case SC_PutString:
+		  {
+		    DEBUG ('s', "PutString\n");
+		    interrupt->Halt ();
+		    break;
+		  }
+		case SC_GetChar:
+		  {
+		    DEBUG ('s', "GetChar\n");
+		    interrupt->Halt ();
+		    break;
+		  }
+		case SC_GetString:
+		  {
+		    DEBUG ('s', "GetString\n");
+		    interrupt->Halt ();
+		    break;
+		  }
+		case SC_PutInt:
+		  {
+		    DEBUG ('s', "PutInt\n");
+		    interrupt->Halt ();
+		    break;
+		  }
+		case SC_GetInt:
+		  {
+		    DEBUG ('s', "GetInt\n");
 		    interrupt->Halt ();
 		    break;
 		  }
